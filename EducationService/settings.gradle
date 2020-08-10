@@ -1,0 +1,6 @@
+rootProject.name = 'EducationService'
+include 'Service1'
+include 'Service2'
+include 'Service3'
+include 'Infrastructure'
+
