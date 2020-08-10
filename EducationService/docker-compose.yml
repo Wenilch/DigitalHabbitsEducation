@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  service1:
+    container_name: service1
+    build: ./Service1
+    restart: always
+    ports:
+      - 8083:8083
+    networks:
+      - digitalhabbits
+  service2:
+    container_name: service2
+    build: ./Service2
+    restart: always
+    ports:
+      - 8081:8081
+    networks:
+      - digitalhabbits
+  service3:
+    container_name: service3
+    build: ./Service3
+    restart: always
+    ports:
+      - 8082:8082
+    networks:
+      - digitalhabbits
+  service-postgres:
+    container_name: db
+    build: ./Infrastructure
+    restart: always
+    ports:
+      - 5432:5432
+    networks:
+      - digitalhabbits
+
+networks:
+  digitalhabbits:
+    name: digitalhabbits
+    external: true
